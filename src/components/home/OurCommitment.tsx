@@ -35,12 +35,12 @@ const OurCommitment = () => {
                 className="w-full h-[500px] object-cover transform transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
-              <div className="absolute bottom-8 left-8 right-8">
+              {/* <div className="absolute bottom-8 left-8 right-8">
                 <div className="bg-black/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/10">
                   <p className="text-white font-bold text-lg mb-1 italic">"Engineering excellence in every brick we lay."</p>
                   <p className="text-gold-500 font-semibold text-sm">— PBD Leadership Team</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </FadeIn>
 
@@ -64,7 +64,7 @@ const OurCommitment = () => {
             </FadeIn>
 
             {/* Highlights Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {highlights.map((item, idx) => (
                 <FadeIn key={idx} delay={400 + idx * 150}>
                   <div className="h-full p-4 bg-gray-50 rounded-2xl border border-gray-100 hover:border-gold-300 hover:bg-white hover:shadow-xl hover:shadow-gold-500/10 transition-all duration-300">
@@ -76,7 +76,7 @@ const OurCommitment = () => {
                   </div>
                 </FadeIn>
               ))}
-            </div>
+            </div> */}
 
           </div>
 
