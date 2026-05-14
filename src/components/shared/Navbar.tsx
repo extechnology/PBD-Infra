@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { Menu, X, Building2, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 import { navItems } from "../../constants/navbarData";
 
 const Navbar = () => {
@@ -27,17 +27,15 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="bg-gold-500 p-2 rounded-lg group-hover:rotate-12 transition-transform duration-300">
-              <Building2 className="text-black w-6 h-6" />
-            </div>
-            <span
+          <Link to="/" className="flex items-center  group">
+            <img src="/logos/logo2.png" className="w-28" alt="logo" />
+            {/* <span
               className={`text-2xl font-extrabold tracking-tight transition-colors duration-300 ${
                 scrolled ? "text-white" : "text-white drop-shadow-md"
               }`}
             >
               PBD <span className="text-gold-500">INFRA</span>
-            </span>
+            </span> */}
           </Link>
 
           {/* Desktop Navigation */}

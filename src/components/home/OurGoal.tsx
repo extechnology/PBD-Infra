@@ -20,7 +20,7 @@ const OurGoal = () => {
               </FadeIn>
 
               <FadeIn delay={0.2}>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.1] tracking-tight">
+                <h2 className="text-2xl  lg:text-4xl pb-2  text-white leading-[1.1] tracking-tight">
                   Build Trust Through <br />
                   <span className="font-bold text-gold-500">
                     Timely Delivery

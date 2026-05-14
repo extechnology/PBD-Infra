@@ -46,15 +46,15 @@ const OurCommitment = () => {
 
           {/* Text Side */}
           <div className="space-y-10">
-            <FadeIn delay={200} className="space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-gold-50 px-4 py-2 rounded-full text-gold-600 text-sm font-bold uppercase tracking-wider border border-gold-200">
+            <FadeIn delay={200} className="space-y-6">
+              <div className="inline-flex items-center space-x-2 bg-gold-50 px-4 py-2 mb-3 rounded-full text-gold-600 text-sm font-bold uppercase tracking-wider border border-gold-200">
                 <CheckCircle2 size={16} />
                 <span>Our Commitment</span>
               </div>
-              <h2 className="text-xl sm:text-3xl font-black text-black leading-tight">
+              <h2 className="text-xl sm:text-4xl py-2 text-black leading-tight">
                 Dedicated to building trust <span className="text-gold-500">through excellence.</span>
               </h2>
-              <p className="text-gray-600 leading-relaxed text-lg">
+              <p className="text-gray-600 leading-relaxed text-lg pt-4">
                 At PBD, we are committed to delivering exceptional construction and
                 real estate solutions with uncompromised quality, transparency, and
                 timely execution. Every project reflects our dedication to engineering
