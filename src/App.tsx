@@ -6,6 +6,7 @@ import Navbar from "./components/shared/Navbar";
 import Footer from "./components/shared/Footer";
 import WhatsAppButton from "./components/shared/WhatsAppButton";
 import Loader from "./components/feedback/Loader";
+import ScrollToTop from "./app/router/ScrollToTop";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const GalleryPage = lazy(() => import("./pages/GalleryPage"));
@@ -21,6 +22,7 @@ function App() {
       <Router>
         <Navbar />
         <Suspense fallback={<Loader />}>
+        <ScrollToTop />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/gallery" element={<GalleryPage />} />
