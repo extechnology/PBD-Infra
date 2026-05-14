@@ -1,24 +1,28 @@
 import FadeIn from "../shared/FadeIn";
 
+
 const PrimeServices = () => {
   return (
-    <div className="py-10 text-white bg-black">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
-        <FadeIn delay={0.2}>
-          <div>
-            <img
-              src="/images/image3.webp"
-              className="w-full h-full object-cover rounded-2xl"
-              alt=""
-            />
-          </div>
-        </FadeIn>
-        <div className="content-center">
-          <FadeIn delay={0.2}>
-            <h1>Our Prime Services</h1>
+    <section className="bg-black py-20 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-12 items-center">
+          {/* Image */}
+          <FadeIn direction="left">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg shadow-gold-500/10 border border-gold-500/20">
+              <img
+                src="/images/image3.webp"
+                alt="Prime Services"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
           </FadeIn>
-          <FadeIn delay={0.2}>
-            <p>
+
+          {/* Text */}
+          <FadeIn direction="right" className="space-y-12">
+            <h2 className="text-4xl font-bold pb-4">
+              Our <span className="text-gold-500">Prime Services</span>
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed pb-4">
               We offer comprehensive construction and real estate solutions
               backed by over 20 years of industry expertise. Our prime services
               include residential construction, commercial development,
@@ -26,12 +30,18 @@ const PrimeServices = () => {
               contracting services, and real estate development. We focus on
               delivering high-quality, durable, and future-ready spaces with
               professional execution, modern engineering practices, and timely
-              project completion{" "}
+              project completion
             </p>
+            <a
+              href="/services"
+              className="inline-block bg-gold-500 text-black font-semibold py-3 px-6 rounded-full hover:bg-gold-400 transition-colors duration-300 shadow-md shadow-gold-500/30"
+            >
+              Explore Services
+            </a>
           </FadeIn>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
