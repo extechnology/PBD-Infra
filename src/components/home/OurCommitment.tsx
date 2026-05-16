@@ -36,25 +36,20 @@ const OurCommitment = () => {
           <div className="space-y-10">
             <FadeIn delay={200} className="space-y-6">
               <SubHeading title="Our Commitment" />
-            </FadeIn>
-            <FadeIn delay={400}>
               <h2 className="text-xl sm:text-2xl max-w-sm py-2 text-black leading-tight">
                 Dedicated to building trust{" "}
                 <span className="text-gold-500 font-medium">
                   Through Excellence.
                 </span>
-            </h2>
+              </h2>
+              <p className="text-gray-600 leading-relaxed text-sm pt-2">
+                At PBD, we are committed to delivering exceptional construction
+                and real estate solutions with uncompromised quality,
+                transparency, and timely execution. Every project reflects our
+                dedication to engineering excellence, customer satisfaction,
+                sustainable development, and long-term value creation.
+              </p>
             </FadeIn>
-            <FadeIn delay={600}>
-            <p className="text-gray-600 leading-relaxed text-sm pt-4">
-              At PBD, we are committed to delivering exceptional construction
-              and real estate solutions with uncompromised quality,
-              transparency, and timely execution. Every project reflects our
-              dedication to engineering excellence, customer satisfaction,
-              sustainable development, and long-term value creation.
-            </p>
-            </FadeIn>
-            
           </div>
         </div>
       </div>
