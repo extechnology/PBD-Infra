@@ -6,7 +6,7 @@ interface Props {
 
 const OfferServiceCard = ({ title, description, image }: Props) => {
   return (
-    <div className="group relative bg-gray-50 rounded-sm border border-zinc-50 hover:border-gold-500/40 transition-all duration-500 overflow-hidden">
+    <div className="group relative bg-gray-50 rounded-sm border border-zinc-50 hover:border-gold-500/40 transition-all duration-500 overflow-hidden flex flex-col h-full">
       {/* Image */}
       <div className="overflow-hidden h-[400px]">
         <img
@@ -17,17 +17,20 @@ const OfferServiceCard = ({ title, description, image }: Props) => {
       </div>
 
       {/* Content */}
-      <div className="p-8">
+      <div className="p-8 flex flex-col grow">
         <h3 className="text-lg font-medium text-gray-800 mb-5 group-hover:text-gold-500 transition">
           {title}
         </h3>
 
         <p className="text-gray-700 text-sm leading-7 mb-8">{description}</p>
 
-        <button className="text-gold-500 border-b border-gold-500 pb-1 hover:tracking-wider transition-all duration-300">
-          View More
-        </button>
+        <div className="mt-auto">
+          <button className="text-gold-500 border-b border-gold-500 pb-1 hover:tracking-wider transition-all duration-300">
+            View More
+          </button>
+        </div>
       </div>
+
 
       {/* Hover Glow */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition pointer-events-none">
