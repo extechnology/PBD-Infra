@@ -12,18 +12,25 @@ const visibilityData = [
 ];
 
 const OurVisibility = () => {
-  const [loadedImages, setLoadedImages] = useState(0);
-  const isLoading = loadedImages < visibilityData.length;
 
-  const handleImageLoad = () => {
-    setLoadedImages((prev) => prev + 1);
-  };
+  const [isLoading, setIsLoading] = useState(true);
 
-  console.log(handleImageLoad);
+  if (isLoading) {
+    return (
+      <>
+        <VisibilitySkeleton />
+        <img
+          src="/images/image3.webp"
+          alt="loading-trigger"
+          className="hidden"
+          onLoad={() => setIsLoading(false)}
+        />
+      </>
+    );
+  }
 
   return (
     <section className="bg-white text-black py-20 relative">
-      {isLoading && <VisibilitySkeleton />}
 
       <div
         className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-opacity duration-1000 ${
