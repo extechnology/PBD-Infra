@@ -1,5 +1,6 @@
 import OfferServiceCard from "./OfferServiceCard";
 import SectionHeading from "./SectionHeading";
+import FadeIn from "../shared/FadeIn";
 
 const services = [
   {
@@ -44,14 +45,16 @@ const OffersServices = () => {
   return (
     <section className="py-28 px-6">
       <div className="max-w-7xl mx-auto">
-        <SectionHeading
-          title="Premium Development Services"
-          subtitle="Professional project development, construction, infrastructure, and management solutions tailored for modern Kerala."
-        />
+        <FadeIn>
+          <SectionHeading
+            title="Premium Development Services"
+            subtitle="Professional project development, construction, infrastructure, and management solutions tailored for modern Kerala."
+          />
+        </FadeIn>
 
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <OfferServiceCard key={index} {...service} />
+          {services.map((service) => (
+              <OfferServiceCard {...service} />
           ))}
         </div>
       </div>
@@ -60,3 +63,4 @@ const OffersServices = () => {
 };
 
 export default OffersServices;
+

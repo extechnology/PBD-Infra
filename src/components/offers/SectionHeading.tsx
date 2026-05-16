@@ -6,7 +6,7 @@ interface Props {
 const SectionHeading = ({ title, subtitle }: Props) => {
   return (
     <div className="text-center mb-16">
-      <p className="text-yellow-500 tracking-[5px] uppercase text-sm mb-3">
+      <p className="text-gold-500 tracking-[5px] uppercase text-sm mb-3">
         PBD Infrastructure
       </p>
 
