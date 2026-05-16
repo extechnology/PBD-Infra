@@ -10,10 +10,10 @@ const Hero = () => {
           alt="Our Journey Hero Image"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        {/* <div className="absolute inset-0 bg-black/40"></div> */}
       </section>
     </FadeIn>
   );
 };
 
-export default Hero;
+export default Hero;

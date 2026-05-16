@@ -1,4 +1,5 @@
 import FadeIn from "../shared/FadeIn";
+import SectionHeading from "../ui/SectionHeading";
 
 const downloads = [
   "Ongoing Projects at Kerala",
@@ -8,16 +9,14 @@ const downloads = [
 
 const DownloadSection = () => {
   return (
-    <section className="py-28 px-6">
+    <section className="pb-20 pt-10 px-6">
       <div className="max-w-5xl mx-auto text-center">
         <FadeIn>
           <p className="uppercase tracking-[5px] text-gold-500 mb-3">
             Downloads
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-medium mb-14">
-            Project Documents
-          </h2>
+          <SectionHeading title="Project Documents" />
         </FadeIn>
 
         <div className="space-y-6">
@@ -39,4 +38,3 @@ const DownloadSection = () => {
 };
 
 export default DownloadSection;
-

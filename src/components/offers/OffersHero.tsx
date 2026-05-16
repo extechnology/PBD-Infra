@@ -11,16 +11,16 @@ const OffersHero = () => {
             alt="Offers Hero"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/75" />
+          {/* <div className="absolute inset-0 bg-black/75" /> */}
         </div>
 
         {/* Gold Glow */}
-        <div className="absolute w-[500px] h-[500px] bg-gold-500/10 blur-[140px] rounded-full top-20 left-20" />
+        <div className="absolute w-[500px] h-[500px] bg-gold-500/10 blur-[140px] top-20 left-20" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+          {/* <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
             We <span className="text-gold-500">Offer</span>
-          </h1>
+          </h1> */}
 
           {/* <p className="max-w-3xl mx-auto text-zinc-300 text-lg leading-8">
           Delivering high-quality residential, commercial, and industrial

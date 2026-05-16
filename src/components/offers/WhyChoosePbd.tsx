@@ -1,4 +1,4 @@
-import SectionHeading from "./SectionHeading";
+import SectionHeading from "../ui/SectionHeading";
 import FadeIn from "../shared/FadeIn";
 
 const points = [
@@ -12,7 +12,7 @@ const points = [
 
 const WhyChoosePBD = () => {
   return (
-    <section className="py-28 bg-zinc-950">
+    <section className="py-18 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <FadeIn>
           <SectionHeading
@@ -28,7 +28,7 @@ const WhyChoosePBD = () => {
                 <div className="flex gap-5 items-start">
                   <div className="w-3 h-3 rounded-full bg-gold-500 mt-2" />
 
-                  <p className="text-zinc-300 leading-7">{point}</p>
+                  <p className="text-zinc-800 leading-7">{point}</p>
                 </div>
               </div>
             </FadeIn>
@@ -40,4 +40,3 @@ const WhyChoosePBD = () => {
 };
 
 export default WhyChoosePBD;
-

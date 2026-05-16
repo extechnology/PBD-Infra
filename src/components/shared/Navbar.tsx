@@ -20,53 +20,48 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-black/90 backdrop-blur-md shadow-lg shadow-gold-900/10 py-3"
+          ? "bg-black/40 backdrop-blur-md shadow-lg shadow-gold-900/10 py-3"
           : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center  group">
+          <Link to="/" className="flex items-center group">
             <img src="/logos/logo2.png" className="w-28" alt="logo" />
-            {/* <span
-              className={`text-2xl font-extrabold tracking-tight transition-colors duration-300 ${
-                scrolled ? "text-white" : "text-white drop-shadow-md"
-              }`}
-            >
-              PBD <span className="text-gold-500">INFRA</span>
-            </span> */}
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <div className="flex space-x-6">
-              {navItems.map((item) => (
-                <NavLink
-                  key={item.title}
-                  to={item.link}
-                  className={({ isActive }) =>
-                    `text-sm font-medium transition-all duration-300 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-                      isActive
-                        ? "text-gold-500 after:scale-x-100"
-                        : scrolled
-                          ? "text-gray-300 hover:text-gold-400"
-                          : "text-white hover:text-gold-400"
-                    }`
-                  }
-                >
-                  {item.title}
-                </NavLink>
-              ))}
-            </div>
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex items-center space-x-10 ">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.title}
+                to={item.link}
+                className={({ isActive }) =>
+                  `text-[13px] tracking-widest uppercase font-medium transition-all duration-300 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+                    isActive
+                      ? "text-gold-500 after:scale-x-100"
+                      : scrolled
+                        ? "text-gray-300 hover:text-gold-400"
+                        : "text-white hover:text-gold-400"
+                  }`
+                }
+              >
+                {item.title}
+              </NavLink>
+            ))}
+          </div>
 
+          {/* Desktop Contact Button */}
+          <div className="hidden md:block">
             <Link
               to="/contact"
-              className="bg-gold-500 text-black px-4 py-2 rounded-full font-bold text-sm hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/30 transition-all duration-300 active:scale-95"
+              className="bg-gold-500 text-black px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/30 transition-all duration-300 active:scale-95"
             >
               Contact Now!
             </Link>
           </div>
+
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">

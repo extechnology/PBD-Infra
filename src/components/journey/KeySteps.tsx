@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { keyStepsData } from "../../constants/keyStepsData";
 import FadeIn from "../shared/FadeIn";
+import SectionHeading from "../ui/SectionHeading";
 
 const KeySteps = () => {
   const [activeStep, setActiveStep] = useState<number | null>(null);
@@ -9,12 +10,10 @@ const KeySteps = () => {
     <FadeIn>
       <div className="timeline-root">
         <div className="timeline-inner">
-          <h2 className="text-4xl text-gold-500 font-medium pb-3 text-center">
-            Key Steps Through Our Journey
-          </h2>
-          <p className="text-lg text-gray-400 font-medium text-center pb-10">
-            Building Success Through Every Milestone
-          </p>
+          <SectionHeading
+            title="Key Steps Through Our Journey"
+            subtitle="Building Success Through Every Milestone"
+          />
 
           <div className="chain">
             {keyStepsData?.map((step, idx) => {

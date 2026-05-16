@@ -1,4 +1,6 @@
 import FadeIn from "../shared/FadeIn"
+import CurtainReveal from "../ui/ImageReveal";
+import SectionHeading from "../ui/SectionHeading";
 
 const journeyContent = {
   messageFromMD: {
@@ -21,42 +23,37 @@ const OurJourney = () => {
     <div>
       <FadeIn>
         <div className="max-w-7xl mx-auto pb-10">
-          <h1 className="text-4xl font-medium text-gold-500 text-center py-5">
-            Our Journey
-          </h1>
-          <p className="text-lg text-gray-400 font-medium text-center pb-10">
-            Transforming Ideas into Trusted Developments
-          </p>
+          <SectionHeading title="Our Journey" subtitle="Transforming Ideas into Trusted Developments" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div className="">
-              <img
+              <CurtainReveal
                 src="/images/image1.webp"
                 alt="no image"
-                className="rounded-2xl"
+                className=""
               />
             </div>
 
             <div className="content-center">
               <p className="pt-3 font-medium text-lg">{journeyContent.messageFromMD.title}</p>
-              <p className="py-5 text-justify ">
+              <p className="py-5 text-sm text-justify ">
                 {journeyContent.messageFromMD.content}
               </p>
-              <p className="pt-5 font-medium text-gold-500">{journeyContent.messageFromMD.author}</p>
+              <p className=" font-medium text-gold-500">{journeyContent.messageFromMD.author}</p>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 pt-10 gap-10">
             <div className="content-center">
-              <p className="pt-3 font-medium">{journeyContent.ourManagement.title}</p>
+              <p className="pt-3 text-gold-500 font-medium">{journeyContent.ourManagement.title}</p>
               <p className="py-2">{journeyContent.ourManagement.subtitle}</p>
-              <p className="py-5 text-justify">
+              <p className="py-1 text-sm text-justify">
                 {journeyContent.ourManagement.content}
               </p>
             </div>
             <div className="">
-              <img
+              <CurtainReveal
                 src="/images/image1.webp"
                 alt="no image"
-                className="rounded-2xl"
+                className=""
               />
             </div>
           </div>

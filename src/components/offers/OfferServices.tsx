@@ -1,5 +1,5 @@
 import OfferServiceCard from "./OfferServiceCard";
-import SectionHeading from "./SectionHeading";
+import SectionHeading from "../ui/SectionHeading";
 import FadeIn from "../shared/FadeIn";
 
 const services = [
@@ -43,7 +43,7 @@ const services = [
 
 const OffersServices = () => {
   return (
-    <section className="py-28 px-6">
+    <section className="py-10 px-6">
       <div className="max-w-7xl mx-auto">
         <FadeIn>
           <SectionHeading
@@ -54,7 +54,7 @@ const OffersServices = () => {
 
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
           {services.map((service) => (
-              <OfferServiceCard {...service} />
+            <OfferServiceCard {...service} />
           ))}
         </div>
       </div>
@@ -63,4 +63,3 @@ const OffersServices = () => {
 };
 
 export default OffersServices;
-
