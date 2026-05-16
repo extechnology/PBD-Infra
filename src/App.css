@@ -1,2 +1,372 @@
-
 /* Custom styles for App can go here */
+
+:root {
+  --accent: #d4af37;
+}
+
+.timeline-root {
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+}
+
+.timeline-inner {
+  width: 100%;
+  max-width: 760px;
+}
+
+.timeline-heading {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(52px, 8vw, 96px);
+  letter-spacing: 0.08em;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.timeline-sub {
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 72px;
+}
+
+/* Chain wrapper */
+.chain {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Vertical rail */
+.chain::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #eeeeee 8%,
+    #eeeeee 92%,
+    transparent 100%
+  );
+  z-index: 0;
+}
+
+/* Each link */
+.chain-link {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  z-index: 1;
+  padding: 28px 0;
+}
+
+.chain-link:nth-child(odd) {
+  flex-direction: row;
+}
+
+.chain-link:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.chain-link:nth-child(odd) .link-card {
+  text-align: right;
+  padding-right: 32px;
+}
+
+.chain-link:nth-child(odd) .card-accent-bar {
+  left: auto;
+  right: 0;
+}
+
+.chain-link:nth-child(even) .link-card {
+  text-align: left;
+  padding-left: 32px;
+}
+
+.chain-link:nth-child(even) .card-accent-bar {
+  left: 0;
+  right: auto;
+}
+
+/* Card */
+.link-card {
+  flex: 1;
+  max-width: calc(50% - 48px);
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  padding: 22px 24px;
+  cursor: pointer;
+  transition:
+    border-color 0.3s,
+    transform 0.3s,
+    box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.link-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.link-card:hover,
+.link-card.active {
+  transform: translateY(-2px);
+}
+
+.link-card.active {
+  border-color: #d4af37;
+  background: #fff;
+  box-shadow:
+    0 10px 40px -10px rgba(212, 175, 55, 0.2),
+    inset 0 0 0 1px rgba(212, 175, 55, 0.1);
+}
+
+.link-card:hover:not(.active) {
+  border-color: #e0e0e0;
+  box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.1);
+}
+
+/* Accent bar */
+.card-accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-card.active .card-accent-bar,
+.link-card:hover .card-accent-bar {
+  transform: scaleY(1);
+}
+
+.card-year {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.6;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.link-card.active .card-desc,
+.link-card:hover .card-desc {
+  color: #444;
+}
+
+/* Center node */
+.node-wrap {
+  width: 96px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Chain link connector — top */
+.node-connector-top,
+.node-connector-bottom {
+  width: 1px;
+  height: 28px;
+  background: #f0f0f0;
+  flex-shrink: 0;
+}
+
+/* Outer ring */
+.node-outer {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+  background: #ffffff;
+  position: relative;
+}
+
+.chain-link:hover .node-outer,
+.chain-link.active-link .node-outer {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px -4px var(--accent);
+}
+
+.node-inner {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fcfcfc;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #bbb;
+  transition:
+    background 0.3s,
+    border-color 0.3s,
+    color 0.3s;
+}
+
+.chain-link:hover .node-inner,
+.chain-link.active-link .node-inner {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #000;
+  font-weight: 700;
+}
+
+/* Horizontal arm from card to node */
+.arm {
+  flex: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #eeeeee);
+  transition: background 0.3s;
+}
+
+.chain-link:nth-child(odd) .arm {
+  width: calc(0px);
+  background: linear-gradient(to right, #eeeeee, transparent 0%);
+}
+
+.chain-link:nth-child(even) .arm {
+  background: linear-gradient(to left, #eeeeee, transparent 0%);
+}
+
+.chain-link:hover .arm,
+.chain-link.active-link .arm {
+  background: var(--accent) !important;
+  opacity: 0.3;
+}
+
+/* Animated pulse ring */
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.pulse-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chain-link.active-link .pulse-ring {
+  opacity: 1;
+}
+
+/* Chain oval links decorative */
+.oval-chain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.oval {
+  width: 10px;
+  height: 16px;
+  border-radius: 5px;
+  border: 1px solid #eeeeee;
+  transition: border-color 0.3s;
+}
+
+.chain-link:hover .oval,
+.chain-link.active-link .oval {
+  border-color: var(--accent);
+  opacity: 0.5;
+}
+
+/* Empty space filler */
+.empty-side {
+  flex: 1;
+  max-width: calc(50% - 48px);
+}
+
+@media (max-width: 600px) {
+  .chain::before {
+    left: 28px;
+  }
+  .chain-link,
+  .chain-link:nth-child(even) {
+    flex-direction: row !important;
+    align-items: flex-start;
+  }
+  .node-wrap {
+    width: 56px;
+    order: 1;
+  }
+  .link-card {
+    order: 2;
+    max-width: none;
+    flex: 1;
+    text-align: left !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .card-accent-bar {
+    left: 0 !important;
+    right: auto !important;
+  }
+  .empty-side {
+    display: none;
+  }
+}

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 @theme {
   --color-gold-50: #fbf9f1;
   --color-gold-100: #f5f1de;

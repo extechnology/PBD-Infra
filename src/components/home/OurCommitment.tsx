@@ -1,24 +1,7 @@
-import { CheckCircle2, ShieldCheck, Target, Zap } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import FadeIn from "../shared/FadeIn";
 
 const OurCommitment = () => {
-  const highlights = [
-    {
-      icon: ShieldCheck,
-      title: "Uncompromised Quality",
-      desc: "Standards that exceed expectations."
-    },
-    {
-      icon: Target,
-      title: "Timely Execution",
-      desc: "Delivering projects on schedule."
-    },
-    {
-      icon: Zap,
-      title: "Future-Ready",
-      desc: "Innovation-driven development."
-    }
-  ];
 
   return (
     <section className="py-24 bg-white overflow-hidden">
@@ -27,8 +10,8 @@ const OurCommitment = () => {
           
           {/* Image Side */}
           <FadeIn direction="right" className="relative group">
-            <div className="absolute -inset-4 bg-gold-100/50 rounded-[2rem] -rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
-            <div className="relative overflow-hidden rounded-[2rem] shadow-2xl shadow-gold-900/10">
+            <div className="absolute -inset-4 bg-gold-100/50 rounded-4xl -rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
+            <div className="relative overflow-hidden rounded-4xl shadow-2xl shadow-gold-900/10">
               <img
                 src="/images/image1.webp"
                 alt="Construction commitment"
@@ -52,7 +35,7 @@ const OurCommitment = () => {
                 <span>Our Commitment</span>
               </div>
               <h2 className="text-xl sm:text-4xl py-2 text-black leading-tight">
-                Dedicated to building trust <span className="text-gold-500">through excellence.</span>
+                Dedicated to building trust <span className="text-gold-500 font-medium">Through Excellence.</span>
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg pt-4">
                 At PBD, we are committed to delivering exceptional construction and

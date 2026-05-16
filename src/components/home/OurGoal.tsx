@@ -63,7 +63,7 @@ const OurGoal = () => {
           {/* Minimalist Image Layout */}
           <div className="w-full lg:w-1/2 order-1 lg:order-2">
               <FadeIn delay={0.8}>
-            <div className="relative w-full aspect-4/5 md:aspect-square lg:aspect-[4/5] max-w-md mx-auto lg:max-w-none lg:ml-auto">
+            <div className="relative w-full aspect-4/5 md:aspect-square lg:aspect-4/5 max-w-md mx-auto lg:max-w-none lg:ml-auto">
               {/* Subtle Gold Frame */}
               <div className="absolute -inset-4 border border-gold-500/30 rounded-t-[50%] rounded-b-md opacity-50 transform translate-x-4 translate-y-4"></div>
 
