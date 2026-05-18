@@ -45,7 +45,7 @@ const OurGoal = () => {
           </div>
 
           <FadeIn delay={0.4}>
-            <p className="text-gray-700 text-sm  font-light leading-relaxed">
+            <p className="text-gray-700 text-sm text-justify  font-light leading-relaxed">
               We aim to achieve new milestones by delivering high-quality
               residential, commercial, and industrial projects across Kerala.
               Our focus remains steadfast on excellence in construction,

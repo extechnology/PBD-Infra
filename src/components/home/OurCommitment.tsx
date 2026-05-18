@@ -22,7 +22,7 @@ const OurCommitment = () => {
   }
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-10 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Image Side */}
@@ -42,7 +42,7 @@ const OurCommitment = () => {
                   Through Excellence.
                 </span>
               </h2>
-              <p className="text-gray-600 leading-relaxed text-sm pt-2">
+              <p className="text-gray-600 text-justify  leading-relaxed text-sm pt-2">
                 At PBD, we are committed to delivering exceptional construction
                 and real estate solutions with uncompromised quality,
                 transparency, and timely execution. Every project reflects our

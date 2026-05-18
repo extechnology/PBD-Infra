@@ -6,7 +6,7 @@ import SubHeading from "../ui/SubHeading";
 const Highlights = () => {
   return (
     <FadeIn>
-      <section className="relative py-24 bg-white overflow-hidden">
+      <section className="relative md:py-24 py-10 bg-white overflow-hidden">
         {/* Background Glow */}
         <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-gold-500/10 blur-[140px] " />
         <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-gold-500/5 blur-[120px] " />

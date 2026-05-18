@@ -22,7 +22,7 @@ const PrimeServices = () => {
   }
 
   return (
-    <section className="bg-white pt-8 text-black pb-20">
+    <section className="bg-white pt-8 text-black pb-10 md:pb-20">
       <div className="max-w-7xl mx-auto px-4 md:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2  gap-8 items-center">
           {/* Image */}
@@ -41,7 +41,7 @@ const PrimeServices = () => {
             <h2 className="text-2xl font-medium pb-4">
               Our <span className="text-gold-500">Prime Services</span>
             </h2>
-            <p className="text-sm text-gray-700 leading-relaxed pb-4">
+            <p className="text-sm text-gray-700 text-justify leading-relaxed pb-4">
               We offer comprehensive construction and real estate solutions
               backed by over 20 years of industry expertise. Our prime services
               include residential construction, commercial development,

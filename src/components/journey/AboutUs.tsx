@@ -4,7 +4,7 @@ import CurtainReveal from "../ui/ImageReveal";
 const AboutUs = () => {
   return (
     <div>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-20">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-0 py-10 md:py-20">
         <FadeIn delay={0.2}>
           <div>
             <CurtainReveal src="/images/image1.webp" alt="no image" className="" />

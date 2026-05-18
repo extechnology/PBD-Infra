@@ -30,7 +30,7 @@ const OurVisibility = () => {
   }
 
   return (
-    <section className="bg-white text-black py-20 relative">
+    <section className="bg-white text-black py-12 md:py-20 relative">
 
       <div
         className={`max-w-7xl mx-auto px-4 md:px-0 transition-opacity duration-1000 ${

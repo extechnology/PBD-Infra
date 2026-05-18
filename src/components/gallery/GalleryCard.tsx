@@ -27,14 +27,14 @@ const GalleryCard = () => {
   }, [currentPage]);
 
   return (
-    <div className="bg-charcoal min-h-screen text-black font-body selection:bg-accent selection:text-black pb-20">
+    <div className="bg-charcoal min-h-screen text-black font-body selection:bg-accent selection:text-black md:pb-20 pb-10">
 
-      <section className="pt-24 relative overflow-hidden">
+      <section className="pt-12 md:pt-20 px-4 md:px-0 relative overflow-hidden">
         {/* Soft Background Accents */}
         <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 rounded-full bg-white/5 blur-3xl pointer-events-none" />
         <div className="absolute top-1/2 left-0 -ml-40 -mb-40 w-96 h-96 rounded-full bg-white/5 blur-3xl pointer-events-none" />
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <SectionHeading title="Our Milestone Projects" />
         </div>
 

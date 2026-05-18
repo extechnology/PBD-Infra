@@ -5,7 +5,7 @@ interface Props {
 
 const SectionHeading = ({ title, subtitle }: Props) => {
   return (
-    <div className="text-center mb-10">
+    <div className="text-center mb-5 md:mb-10">
 
       <h2 className="text-xl md:text-3xl text-gold-500 font-medium mb-2">{title}</h2>
 

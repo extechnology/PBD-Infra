@@ -5,7 +5,7 @@ import CurtainReveal from "../ui/ImageReveal";
 
 const ValueGrowthSection = () => {
   return (
-    <section className="bg-white py-28 overflow-hidden">
+    <section className="bg-white md:py-28 py-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 space-y-32">
         {/* ================= SECTION 1 ================= */}
         <FadeIn>
@@ -36,7 +36,7 @@ const ValueGrowthSection = () => {
             {/* CONTENT */}
             <div>
               {/* Label */}
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-4 mb-3">
                 <SubHeading title="Appreciation in Value" />
               </div>
 
@@ -72,12 +72,12 @@ const ValueGrowthSection = () => {
             {/* CONTENT */}
             <div className="order-2 lg:order-1">
               {/* Label */}
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-4 mb-3">
                 <SubHeading title="Future Vision" />
               </div>
 
               {/* Heading */}
-              <h2 className="text-xl md:text-2xl font-medium text-black leading-tight mb-5">
+              <h2 className="text-xl md:text-2xl font-medium text-black leading-tight mb-2">
                 Pioneering the Future
                 <span className="block text-gold-600">of Development</span>
               </h2>

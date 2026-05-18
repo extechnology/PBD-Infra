@@ -22,7 +22,7 @@ const OurJourney = () => {
   return (
     <div>
       <FadeIn>
-        <div className="max-w-7xl mx-auto ">
+        <div className="max-w-7xl mx-auto px-4 md:px-0">
           <SectionHeading title="Our Journey" subtitle="Transforming Ideas into Trusted Developments" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="">
