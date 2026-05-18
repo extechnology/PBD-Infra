@@ -43,7 +43,7 @@ const services = [
 
 const OffersServices = () => {
   return (
-    <section className="py-10 px-6">
+    <section className="py-10 px-3 md:px-0">
       <div className="max-w-7xl mx-auto">
         <FadeIn>
           <SectionHeading

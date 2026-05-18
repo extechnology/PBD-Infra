@@ -1,49 +1,60 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Menu, X, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { navItems } from "../../constants/navbarData";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent body scroll on mobile menu
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
+
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-black/40 backdrop-blur-md shadow-lg shadow-gold-900/10 py-3"
-          : "bg-transparent py-5"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
+    <>
+      <nav
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "bg-white/80 backdrop-blur-xl  border-black/5 py-3 shadow-sm"
+            : "bg-transparent py-5"
+        }`}
+      >
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
-            <img src="/logos/logo2.png" className="w-28" alt="logo" />
+          <Link to="/" className="relative z-50">
+            <img
+              src="/logos/logo2.png"
+              className="w-28 object-contain"
+              alt="logo"
+            />
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-10 ">
+          {/* Desktop Nav */}
+          <div className="hidden items-center gap-7 md:flex">
             {navItems.map((item) => (
               <NavLink
                 key={item.title}
                 to={item.link}
                 className={({ isActive }) =>
-                  `text-[13px] tracking-widest uppercase font-medium transition-all duration-300 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+                  `relative py-2 text-[11px] font-medium uppercase tracking-[0.25em] transition-all duration-300  after:w-full after:origin-left after:scale-x-0 after:bg-black after:transition-transform after:duration-300 hover:after:scale-x-100 ${
                     isActive
-                      ? "text-gold-500 after:scale-x-100"
+                      ? "text-gold-400 after:scale-x-100"
                       : scrolled
-                        ? "text-gray-300 hover:text-gold-400"
-                        : "text-white hover:text-gold-400"
+                        ? "text-black/70 hover:text-gold-400"
+                        : "text-white hover:text-gold-500"
                   }`
                 }
               >
@@ -52,69 +63,136 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Desktop Contact Button */}
+          {/* Desktop CTA */}
           <div className="hidden md:block">
             <Link
               to="/contact"
-              className="bg-gold-500 text-black px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/30 transition-all duration-300 active:scale-95"
+              className="rounded-full text-[11px] bg-gold-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-white hover:text-black"
             >
-              Contact Now!
+              Contact Now !
             </Link>
           </div>
 
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-lg transition-colors ${
-                scrolled ? "text-white" : "text-white"
-              }`}
-            >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`relative z-50 flex items-center justify-center md:hidden ${
+              scrolled ? "text-black" : "text-white"
+            }`}
+          >
+            <AnimatePresence mode="wait">
+              {isOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <X size={30} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <Menu size={30} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </button>
         </div>
-      </div>
+      </nav>
 
-      {/* Mobile Navigation Drawer */}
-      <div
-        className={`md:hidden absolute top-full left-0 w-full bg-black shadow-xl border-t border-white/10 transition-all duration-300 ease-in-out ${
-          isOpen
-            ? "opacity-100 translate-y-0 visible"
-            : "opacity-0 -translate-y-4 invisible"
-        }`}
-      >
-        <div className="px-4 pt-2 pb-6 space-y-1 sm:px-3">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.title}
-              to={item.link}
+      {/* Mobile Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Background Blur */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-40 bg-black/40 backdrop-blur-md md:hidden"
               onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `flex justify-between items-center px-3 py-4 rounded-xl text-base font-medium transition-colors ${
-                  isActive
-                    ? "bg-gold-500/10 text-gold-500"
-                    : "text-gray-300 hover:bg-white/5 hover:text-gold-400"
-                }`
-              }
+            />
+
+            {/* Mobile Menu */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: -40,
+                scale: 0.98,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }}
+              exit={{
+                opacity: 0,
+                y: -30,
+                scale: 0.98,
+              }}
+              transition={{
+                duration: 0.4,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="fixed inset-x-4 top-24 z-50 overflow-hidden  border border-white/20 bg-white/90 p-4 shadow-2xl backdrop-blur-2xl md:hidden"
             >
-              {item.title}
-              <ChevronRight size={18} className="text-gray-500" />
-            </NavLink>
-          ))}
-          <div className="pt-4">
-            <Link
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-              className="block w-full text-center bg-gold-500 text-black px-6 py-4 rounded-xl font-bold text-lg hover:bg-gold-400 transition-colors shadow-lg shadow-gold-500/20"
-            >
-              Get In Touch
-            </Link>
-          </div>
-        </div>
-      </div>
-    </nav>
+              <div className="space-y-2">
+                {navItems.map((item, idx) => (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{
+                      delay: idx * 0.08,
+                      duration: 0.4,
+                    }}
+                  >
+                    <NavLink
+                      to={item.link}
+                      onClick={() => setIsOpen(false)}
+                      className={({ isActive }) =>
+                        `flex items-center justify-between  px-4 py-4 text-sm font-medium uppercase tracking-[0.2em] transition-all duration-300 ${
+                          isActive
+                            ? "bg-gold-500 text-white"
+                            : "text-black/70 hover:bg-black/5 hover:text-black"
+                        }`
+                      }
+                    >
+                      {item.title}
+
+                      <ChevronRight size={18} />
+                    </NavLink>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="pt-5"
+              >
+                <Link
+                  to="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="flex w-full items-center justify-center  bg-gold-500 px-6 py-4 text-sm font-semibold uppercase tracking-[0.25em] text-white transition-all duration-300 hover:bg-black/90"
+                >
+                  Contact Now
+                </Link>
+              </motion.div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
