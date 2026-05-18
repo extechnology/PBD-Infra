@@ -41,7 +41,7 @@ const Highlights = () => {
               </p>
 
               {/* Button */}
-              <LuxuryButton label="Explore Now!" to="offers" />
+              <LuxuryButton label="Explore Now!" to="offer" />
             </div>
 
             {/* RIGHT IMAGE */}
