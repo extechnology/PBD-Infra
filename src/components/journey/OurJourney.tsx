@@ -22,9 +22,9 @@ const OurJourney = () => {
   return (
     <div>
       <FadeIn>
-        <div className="max-w-7xl mx-auto pb-10">
+        <div className="max-w-7xl mx-auto ">
           <SectionHeading title="Our Journey" subtitle="Transforming Ideas into Trusted Developments" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="">
               <CurtainReveal
                 src="/images/image1.webp"
@@ -41,7 +41,7 @@ const OurJourney = () => {
               <p className=" font-medium text-gold-500">{journeyContent.messageFromMD.author}</p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 pt-10 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 pt-10 gap-8">
             <div className="content-center">
               <p className="pt-3 text-gold-500 font-medium">{journeyContent.ourManagement.title}</p>
               <p className="py-2">{journeyContent.ourManagement.subtitle}</p>

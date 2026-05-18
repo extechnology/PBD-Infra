@@ -60,7 +60,7 @@ const OurGoal = () => {
                 to="/about"
                 className="inline-flex items-center space-x-3 text-black hover:text-gold-500 transition-colors duration-300 group"
               >
-                <span className="uppercase tracking-widest text-xs font-semibold">
+                <span className="uppercase tracking-widest text-xs font-medium">
                   Discover Our Vision
                 </span>
                 <span className="p-1 border border-black/20 rounded-full group-hover:border-gold-500/50 transition-colors">

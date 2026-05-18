@@ -9,7 +9,7 @@ const ValueGrowthSection = () => {
       <div className="max-w-7xl mx-auto px-6 space-y-32">
         {/* ================= SECTION 1 ================= */}
         <FadeIn>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* IMAGE */}
             <div className="relative">
               {/* Background Shape */}
@@ -25,7 +25,7 @@ const ValueGrowthSection = () => {
 
               {/* Floating Card */}
               <div className="absolute bottom-8 right-8 bg-white shadow-2xl  px-8 py-6 border border-gray-100">
-                <h3 className="text-4xl font-semibold text-black mb-2">20+</h3>
+                <h3 className="text-4xl font-medium text-black mb-2">20+</h3>
 
                 <p className="text-gray-500 uppercase tracking-[3px] text-xs">
                   Years Experience
@@ -68,7 +68,7 @@ const ValueGrowthSection = () => {
 
         {/* ================= SECTION 2 ================= */}
         <FadeIn>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* CONTENT */}
             <div className="order-2 lg:order-1">
               {/* Label */}
@@ -77,7 +77,7 @@ const ValueGrowthSection = () => {
               </div>
 
               {/* Heading */}
-              <h2 className="text-xl md:text-2xl font-semibold text-black leading-tight mb-5">
+              <h2 className="text-xl md:text-2xl font-medium text-black leading-tight mb-5">
                 Pioneering the Future
                 <span className="block text-gold-600">of Development</span>
               </h2>
@@ -93,7 +93,7 @@ const ValueGrowthSection = () => {
                 excellence. Over the past 20+ years, our journey has been shaped
                 by the support of our clients, partners, and the people of
                 Kerala. Strengthening this vision, we launched a new venture,
-                <span className="font-semibold text-black">
+                <span className="font-medium text-black">
                   {" "}
                   PCM Asset Home LLP{" "}
                 </span>
@@ -123,7 +123,7 @@ const ValueGrowthSection = () => {
                   New Venture
                 </p>
 
-                <h3 className="text-md font-semibold text-black">
+                <h3 className="text-md font-medium text-black">
                   PCM Asset Home LLP
                 </h3>
               </div>

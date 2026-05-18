@@ -1,3 +1,5 @@
+import FadeUpImage from "../ui/ImageFadeUp";
+
 interface Props {
   title: string;
   description: string;
@@ -9,7 +11,7 @@ const OfferServiceCard = ({ title, description, image }: Props) => {
     <div className="group relative bg-gray-50 rounded-sm border border-zinc-50 hover:border-gold-500/40 transition-all duration-500 overflow-hidden flex flex-col h-full">
       {/* Image */}
       <div className="overflow-hidden h-[400px]">
-        <img
+        <FadeUpImage
           src={image}
           alt={title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

@@ -33,7 +33,7 @@ const OurVisibility = () => {
     <section className="bg-white text-black py-20 relative">
 
       <div
-        className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-opacity duration-1000 ${
+        className={`max-w-7xl mx-auto px-4 md:px-0 transition-opacity duration-1000 ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
       >
@@ -43,7 +43,7 @@ const OurVisibility = () => {
         </FadeIn>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:px-0">
           {visibilityData.map((item, idx) => (
             <FadeIn key={idx} delay={0.3 + idx * 0.1}>
               <div className="relative group overflow-hidden border border-gold-500/30 shadow-xl hover:shadow-gold-500/50 transition-shadow duration-300">
@@ -57,7 +57,7 @@ const OurVisibility = () => {
                 <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {/* Label */}
               </div>
-              <div className=" pt-3 text-sm font-semibold text-gray-600">
+              <div className=" pt-3 text-sm font-medium text-gray-600">
                 {item.label}
               </div>
             </FadeIn>
