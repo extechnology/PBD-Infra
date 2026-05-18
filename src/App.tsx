@@ -14,6 +14,7 @@ const JourneyPage = lazy(() => import("./pages/OurJourneyPage"));
 const OfferPage = lazy(() => import("./pages/WeOfferPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const GallerySinglePage = lazy(() => import("./pages/GallerySinglePage"));
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/gallery/:category" element={<GallerySinglePage />} />
             <Route path="/journey" element={<JourneyPage />} />
             <Route path="/offer" element={<OfferPage />} />
             <Route path="/contact" element={<ContactPage />} />

@@ -1,16 +1,21 @@
-const LuxuryButton = ({ label }: { label: string }) => {
+import { Link } from "react-router-dom";
+
+const LuxuryButton = ({ label, to }: { label: string; to: string }) => {
   return (
-    <button className="group relative overflow-hidden border border-gold-500 px-8 py-4 text-gold-500 hover:text-black transition-all duration-500">
+    <Link
+      to={to}
+      className="group relative inline-flex items-center justify-center overflow-hidden border border-gold-500 px-8 py-4 text-gold-500 hover:text-black transition-all duration-500"
+    >
       <span className="relative z-10 flex items-center gap-3">
         {label}
-        <span className="group-hover:translate-x-1 transition-transform duration-300">
+
+        <span className="transition-transform duration-300 group-hover:translate-x-1">
           →
         </span>
       </span>
 
-      {/* Hover Fill */}
-      <div className="absolute inset-0 bg-gold-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
-    </button>
+      <div className="absolute inset-0 origin-left scale-x-0 bg-gold-500 transition-transform duration-500 group-hover:scale-x-100" />
+    </Link>
   );
 };
 

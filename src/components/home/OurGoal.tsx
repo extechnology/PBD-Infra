@@ -57,7 +57,7 @@ const OurGoal = () => {
           <FadeIn delay={0.6}>
             <div className="">
               <Link
-                to="/about"
+                to="/journey"
                 className="inline-flex items-center space-x-3 text-black hover:text-gold-500 transition-colors duration-300 group"
               >
                 <span className="uppercase tracking-widest text-xs font-medium">

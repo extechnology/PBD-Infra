@@ -51,7 +51,7 @@ const PrimeServices = () => {
               professional execution, modern engineering practices, and timely
               project completion
             </p>
-            <LuxuryButton label="Explore Services" />
+            <LuxuryButton label="Explore Services" to="offers" />
           </FadeIn>
         </div>
       </div>

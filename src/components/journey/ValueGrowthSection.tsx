@@ -61,7 +61,7 @@ const ValueGrowthSection = () => {
               {/* Features */}
 
               {/* Button */}
-              <LuxuryButton label="Explore Projects" />
+              <LuxuryButton label="Explore Projects" to="projects" />
             </div>
           </div>
         </FadeIn>
