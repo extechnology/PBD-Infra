@@ -25,7 +25,7 @@ const UpComing = () => {
         {upcomingProjects.map((project) => (
           <div
             key={project.id}
-            className="group flex flex-col h-full bg-white/5 border border-white/20 rounded-md transition-all duration-300 shadow-soft overflow-hidden"
+            className="group flex flex-col h-full bg-white/5 border border-white/20  transition-all duration-300 shadow-soft overflow-hidden"
           >
             {/* Image Section */}
             <Link to={`/upcoming/${project.id}`}>

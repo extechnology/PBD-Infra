@@ -43,7 +43,7 @@ const Monument = () => {
           {monumentData.map((item, index) => (
             <div
               key={index}
-              className="group border border-neutral-200 bg-white transition-all duration-300 hover:border-black"
+              className="group border border-neutral-200 bg-white transition-all duration-300 hover:border-gold-400"
             >
               {/* Image */}
               <div className="overflow-hidden">
@@ -57,7 +57,7 @@ const Monument = () => {
               {/* Content */}
               <div className="space-y-4 p-6">
                 {/* Number */}
-                <span className="block text-sm tracking-[0.25em] text-neutral-400">
+                <span className="block text-sm tracking-[0.25em] text-gold-500">
                   0{index + 1}
                 </span>
 

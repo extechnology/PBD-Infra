@@ -54,9 +54,9 @@ const OverView = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="group flex items-center gap-4 rounded-sm border border-neutral-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-900 hover:shadow-xl"
+                  className="group flex items-center gap-4 rounded-sm border border-gold-300 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-900 hover:shadow-xl"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900 text-sm font-bold text-white">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-sm font-bold text-white">
                     0{index + 1}
                   </div>
 
