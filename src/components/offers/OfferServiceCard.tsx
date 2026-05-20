@@ -1,4 +1,5 @@
 import FadeUpImage from "../ui/ImageFadeUp";
+import { Link } from "react-router-dom";
 
 interface Props {
   title: string;
@@ -27,12 +28,14 @@ const OfferServiceCard = ({ title, description, image }: Props) => {
         <p className="text-gray-700 text-sm leading-7 mb-8">{description}</p>
 
         <div className="mt-auto">
-          <button className="text-gold-500 border-b border-gold-500 pb-1 hover:tracking-wider transition-all duration-300">
+          <Link
+            to={`/offer-details/${title.replace(/\s+/g, "-")}`}
+            className="text-gold-500 border-b border-gold-500 pb-1 hover:tracking-wider transition-all duration-300"
+          >
             View More
-          </button>
+          </Link>
         </div>
       </div>
-
 
       {/* Hover Glow */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition pointer-events-none">

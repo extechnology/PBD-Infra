@@ -38,7 +38,7 @@ const PrimeServices = () => {
 
           {/* Text */}
           <FadeIn direction="right" className="space-y-12">
-            <h2 className="text-2xl font-medium pb-4">
+            <h2 className="text-2xl font-light pb-4">
               Our <span className="text-gold-500">Prime Services</span>
             </h2>
             <p className="text-sm text-gray-700 text-justify leading-relaxed pb-4">

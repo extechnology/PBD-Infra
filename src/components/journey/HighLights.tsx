@@ -19,7 +19,7 @@ const Highlights = () => {
               <SubHeading title="Highlights of PBD" />
 
               {/* Heading */}
-              <h2 className="text-xl  xl:text-2xl font-medium leading-tight text-black mb-5 mt-4">
+              <h2 className="text-xl  xl:text-2xl font-light leading-tight text-black mb-5 mt-4">
                 Engineering Growth with
                 <span className="block text-gold-500">
                   Experience & Precision

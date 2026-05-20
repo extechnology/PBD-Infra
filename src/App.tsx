@@ -15,6 +15,8 @@ const OfferPage = lazy(() => import("./pages/WeOfferPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const GallerySinglePage = lazy(() => import("./pages/GallerySinglePage"));
+const UpComingProject = lazy(() => import("./pages/UpComingProjects"));
+const OfferDetailPage = lazy(() => import("./pages/OfferDetailPage"));
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
             <Route path="/journey" element={<JourneyPage />} />
             <Route path="/offer" element={<OfferPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/upcoming/:slug" element={<UpComingProject />} />
+            <Route path="/offer-details/:slug" element={<OfferDetailPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

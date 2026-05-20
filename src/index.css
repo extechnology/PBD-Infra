@@ -17,6 +17,9 @@
   --color-gold-900: #603e22;
   --color-gold-950: #372011;
 
+  --color-charcoal: #121212;
+  --color-sand: #d4af37;
+
   --animate-fade-in-up: fade-in-up 1s ease-out forwards;
   --animate-fade-in-down: fade-in-down 1s ease-out forwards;
   --animate-slow-zoom: slow-zoom 20s ease-in-out infinite alternate;

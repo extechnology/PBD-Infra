@@ -41,7 +41,7 @@ const ValueGrowthSection = () => {
               </div>
 
               {/* Heading */}
-              <h2 className="text-xl md:text-2xl font-medium text-black leading-tight mb-5">
+              <h2 className="text-xl md:text-2xl font-light text-black leading-tight mb-5">
                 Engineering Long-Term
                 <span className="block text-gold-600">
                   Property Value & Growth
@@ -77,7 +77,7 @@ const ValueGrowthSection = () => {
               </div>
 
               {/* Heading */}
-              <h2 className="text-xl md:text-2xl font-medium text-black leading-tight mb-2">
+              <h2 className="text-xl md:text-2xl font-light text-black leading-tight mb-2">
                 Pioneering the Future
                 <span className="block text-gold-600">of Development</span>
               </h2>
@@ -123,7 +123,7 @@ const ValueGrowthSection = () => {
                   New Venture
                 </p>
 
-                <h3 className="text-md font-medium text-black">
+                <h3 className="text-md font-light text-black">
                   PCM Asset Home LLP
                 </h3>
               </div>
