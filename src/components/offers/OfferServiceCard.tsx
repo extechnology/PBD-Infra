@@ -1,3 +1,4 @@
+import createSlug from "../../lib/utils/slug";
 import FadeUpImage from "../ui/ImageFadeUp";
 import { Link } from "react-router-dom";
 
@@ -29,7 +30,7 @@ const OfferServiceCard = ({ title, description, image }: Props) => {
 
         <div className="mt-auto">
           <Link
-            to={`/offer-details/${title.replace(/\s+/g, "-")}`}
+            to={`/offer-details/${createSlug(title)}`}
             className="text-gold-500 border-b border-gold-500 pb-1 hover:tracking-wider transition-all duration-300"
           >
             View More

@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import useBanners from "../../features/banners/hooks/useBanners";
 
 const OfferDetailHero = () => {
   const [expanded, setExpanded] = useState(false);
+
+  const { data: bannersData } = useBanners();
+
+  const journeyBanner = bannersData?.filter((banner) => banner.section === "services");
+  const journeyBannerImage = journeyBanner?.[0]?.image;
 
   const description = `
     PBD specializes in project development and construction services across
@@ -18,7 +24,7 @@ const OfferDetailHero = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="/images/image3.webp"
+          src={journeyBannerImage}
           alt="Project Development"
           className="h-full w-full object-cover"
         />

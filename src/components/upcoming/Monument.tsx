@@ -25,7 +25,15 @@ const monumentData = [
   },
 ];
 
-const Monument = () => {
+interface Structures {
+  image:string;
+  title:string;
+  description:string;
+}
+
+const Monument = ({ structures }: {structures: Structures[]}) => {
+
+  console.log(structures,"structures")
   return (
     <section className="bg-white py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
@@ -40,7 +48,7 @@ const Monument = () => {
 
         {/* Grid */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
-          {monumentData.map((item, index) => (
+          {structures.map((item, index) => (
             <div
               key={index}
               className="group border border-neutral-200 bg-white transition-all duration-300 hover:border-gold-400"

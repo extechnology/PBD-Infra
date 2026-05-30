@@ -1,10 +1,15 @@
 import { useState } from "react";
 import HeroSkeleton from "../feedback/skeletons/home/HeroSkeleton";
+import useHeroVideo from "../../features/home/hero/hooks/useHeroVideo";
 
 const Hero = () => {
   const [isLoading, setIsLoading] = useState(true);
   // Placeholder video URL - Replace with actual local video path if available
-  const videoUrl = "https://www.pexels.com/download/video/34430635/";
+  const { data: heroVideoData } = useHeroVideo();
+  const videoUrl = heroVideoData?.[0]?.video;
+
+  console.log(videoUrl, "hero video");
+  
 
   return (
     <section className="relative h-screen w-full overflow-hidden">

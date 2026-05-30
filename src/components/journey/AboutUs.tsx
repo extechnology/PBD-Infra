@@ -1,30 +1,33 @@
 import FadeIn from "../shared/FadeIn";
 import CurtainReveal from "../ui/ImageReveal";
+import { useSectionImages } from "../../features/sectionImages/hooks/useSectionImages";
+
 
 const AboutUs = () => {
+
+  const { data: pages } = useSectionImages();
+  const homePage = pages?.find((page) => page.slug === "our-journey");
+  const aboutSection = homePage?.sections?.find(
+    (section) => section.type === "about-us",
+  );
+  const detail = aboutSection?.details?.[0];
+
   return (
     <div>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-0 py-10 md:py-20">
         <FadeIn delay={0.2}>
           <div>
-            <CurtainReveal src="/images/image1.webp" alt="no image" className="" />
+            <CurtainReveal src={detail?.image || "/images/image1.webp"} alt="no image" className="" />
           </div>
         </FadeIn>
         <div className="content-center">
           <FadeIn delay={0.4}>
-            <h1 className="text-2xl font-medium text-gold-500">About Us</h1>
+            <h1 className="text-2xl font-medium text-gold-500">{detail?.heading}</h1>
             <p className="pt-3 font-medium">
-              Delivering Landmark Projects with Precision & Care
+              {detail?.sub_heading}
             </p>
             <p className="py-3 text-sm text-justify">
-              PBD is one of Calicut’s reputed construction and development
-              companies, delivering high-quality residential, commercial, and
-              industrial projects for over two decades. With 200+ completed
-              projects and hundreds of happy clients, we are known for reliable
-              execution, modern construction practices, timely completion, and
-              customer-focused service. Our experienced engineering team,
-              skilled professionals, and advanced equipment enable us to handle
-              projects of every scale with precision and excellence.
+              {detail?.description}
             </p>
           </FadeIn>
         </div>

@@ -1,12 +1,46 @@
+interface overView {
+  id: number;
+  title: string;
+  description: string;
+  points: string;
+  is_active: boolean;
+}
 
+interface overviewImages {
+  id: number;
+  image: string;
+}
 
-const OverView = () => {
-  const images = [
-    "/images/image1.webp",
-    "/images/image2.webp",
-    "/images/image3.webp",
-    "/images/image1.webp",
-  ];
+interface OverViewProps {
+  overView: overView[];
+  overviewImages?: (overviewImages[] | undefined)[];
+}
+
+const OverView = ({ overView, overviewImages }: OverViewProps) => {
+  const title = overView?.map((item) => item?.title).filter(Boolean) || "";
+
+  const overviewText =
+    overView
+      ?.map((item) => item?.description)
+      .filter(Boolean)
+      .join(" ") || "";
+
+  const points =
+    overView
+      ?.map((item) => item?.points)
+      .filter(Boolean)
+      .join(", ") || "";
+
+  console.log(points, "points");
+
+  const parsedPoints =
+    points
+      ?.split("#")
+      .map((item) => item.trim())
+      .filter(Boolean) || [];
+
+  const galleryImages: overviewImages[] =
+    overviewImages?.flat().filter((img): img is overviewImages => !!img) ?? [];
 
   return (
     <section className="relative overflow-hidden bg-white py-20">
@@ -33,31 +67,22 @@ const OverView = () => {
           {/* Left Content */}
           <div>
             <h2 className="mb-6 text-2xl font-medium leading-tight text-neutral-900">
-              Elevated Living <br />
-              Beyond Expectations
+              {title}
             </h2>
 
             <p className="mb-8 text-justify text-base leading-relaxed text-neutral-600 md:text-lg">
-              Experience a refined lifestyle crafted with modern architecture,
-              spacious interiors, and premium amenities. Every detail is
-              thoughtfully designed to provide elegance, privacy, and comfort in
-              a serene urban environment.
+              {overviewText}
             </p>
 
             {/* Features */}
             <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                "5 Bedroom Villas",
-                "3 Car Garage",
-                "Private Infinity Pool",
-                "Landscaped Garden",
-              ].map((item, index) => (
+              {parsedPoints.map((item, index) => (
                 <div
                   key={index}
                   className="group flex items-center gap-4 rounded-sm border border-gold-300 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-900 hover:shadow-xl"
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-sm font-bold text-white">
-                    0{index + 1}
+                    {String(index + 1).padStart(2, "0")}
                   </div>
 
                   <span className="text-sm font-medium text-neutral-700 md:text-base">
@@ -70,7 +95,7 @@ const OverView = () => {
 
           {/* Right Gallery */}
           <div className="grid grid-cols-2 ">
-            {images.map((image, index) => (
+            {galleryImages.map((image, index) => (
               <div
                 key={index}
                 className={`group relative overflow-hidden  ${
@@ -80,7 +105,7 @@ const OverView = () => {
                 <div className="absolute inset-0 z-10 bg-black/10 transition duration-500 group-hover:bg-black/0" />
 
                 <img
-                  src={image}
+                  src={image?.image}
                   alt="Luxury Residence"
                   className="w-full object-cover aspect-square transition duration-700 group-hover:scale-110 "
                 />

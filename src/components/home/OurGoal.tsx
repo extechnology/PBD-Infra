@@ -5,10 +5,22 @@ import { useState } from "react";
 import GoalSkeleton from "../feedback/skeletons/home/GoalSkeleton";
 import SubHeading from "../ui/SubHeading";
 import CurtainReveal from "../ui/ImageReveal";
+import { useSectionImages } from "../../features/sectionImages/hooks/useSectionImages";
 
 
 const OurGoal = () => {
   const [isLoading, setIsLoading] = useState(true);
+
+  const { data: pages } = useSectionImages();
+
+  const homePage = pages?.find((page) => page.slug === "home");
+
+  const goalSection = homePage?.sections?.find(
+    (section) => section.type === "goal",
+  );
+  const detail = goalSection?.details?.[0];
+
+  console.log(detail, "detail");
 
   if (isLoading) {
     return (
@@ -31,26 +43,18 @@ const OurGoal = () => {
       <div className="w-full lg:w-1/2 flex items-center justify-center p-8 lg:p-20 order-2 lg:order-1">
         <div className="max-w-lg space-y-4">
           <div className="space-y-2">
-            <SubHeading title="Our Goal" />
+            <SubHeading title={detail?.sub_heading} />
 
             <FadeIn delay={0.2}>
-              <h2 className="text-xl lg:text-2xl text-black leading-[1.2] tracking-tight">
-                Build Trust Through <br />
-                <span className="font-medium text-gold-500">
-                  Timely Delivery
-                </span>{" "}
-                <br />& Innovation
+              <h2 className="text-xl max-w-xs lg:text-2xl text-black leading-[1.2] tracking-tight">
+                {detail?.heading}
               </h2>
             </FadeIn>
           </div>
 
           <FadeIn delay={0.4}>
             <p className="text-gray-700 text-sm text-justify  font-light leading-relaxed">
-              We aim to achieve new milestones by delivering high-quality
-              residential, commercial, and industrial projects across Kerala.
-              Our focus remains steadfast on excellence in construction,
-              customer satisfaction, sustainability, and precision in project
-              completion.
+              {detail?.description}
             </p>
           </FadeIn>
 
@@ -83,7 +87,7 @@ const OurGoal = () => {
         >
           <div className="relative grid grid-cols-2 h-[700px] w-full ">
             <CurtainReveal
-              src="/images/image2.webp"
+              src={detail?.image}
               alt="Our Goal 1"
               className="w-full h-full object-cover opacity-90  hover:opacity-100  transition-all duration-700"
             />
@@ -101,6 +105,4 @@ const OurGoal = () => {
   );
 };
 
-
 export default OurGoal;
-

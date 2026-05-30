@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import FadeIn from "../components/shared/FadeIn";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 const projectGalleryData = Array.from({ length: 25 }).map((_, i) => ({
   id: i + 1,
@@ -8,18 +8,20 @@ const projectGalleryData = Array.from({ length: 25 }).map((_, i) => ({
   location: [
     "Feroke, Calicut",
     "Perumanna, Calicut",
-    "Panthiramkave, Calicut",
+    "Panthiramkave, Calicut", 
     "Mukkam, Calicut",
     "Vipin, Ernakulam",
   ][i % 5],
 }));
 
 const GallerySinglePage = () => {
+  const location = useLocation();
+  const images = location.state?.images || [];
   const [currentPage, setCurrentPage] = useState(1);
   const { category } = useParams();
   const itemsPerPage = 10;
-  const totalPages = Math.ceil(projectGalleryData.length / itemsPerPage);
-  const galleryImages = projectGalleryData;
+  const totalPages = Math.ceil(images.length / itemsPerPage);
+  const galleryImages = images;
 
   // Scroll to top of gallery section when page changes
   useEffect(() => {
@@ -53,11 +55,11 @@ const GallerySinglePage = () => {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-charcoal/80 to-transparent mix-blend-multiply opacity-50" />
               </div>
-              <div className="p-3 text-center border-t border-white/20 bg-charcoal/40 backdrop-blur-sm z-10">
-                {/* <p className="text-[9px] sm:text-[10px] text-white/50 group-hover:text-sand transition-colors font-heading tracking-widest uppercase font-medium">
+              {/* <div className="p-3 text-center border-t border-white/20 bg-charcoal/40 backdrop-blur-sm z-10">
+                <p className="text-[9px] sm:text-[10px] text-white/50 group-hover:text-sand transition-colors font-heading tracking-widest uppercase font-medium">
                   {item?.title}
-                </p> */}
-              </div>
+                </p>
+              </div> */}
             </div>
           ))}
         </div>

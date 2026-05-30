@@ -9,16 +9,11 @@ const Footer = () => {
     <footer className="bg-zinc-900 text-gray-300 pt-20 pb-10 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-           
+
           {/* Company Info */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center space-x-2 group">
-              <div className="bg-gold-500 p-2 rounded-lg transition-transform duration-300 group-hover:rotate-12">
-                <Building2 className="text-black w-6 h-6" />
-              </div>
-              <span className="text-2xl font-extrabold tracking-tight text-white">
-                PBD <span className="text-gold-500">INFRA</span>
-              </span>
+            <Link to="/" className="flex mb-0 items-center space-x-2 group pb-5">
+              <img src="/logos/logo2.png" alt="" className="w-28 h-auto object-contain" />
             </Link>
             <p className="text-gray-400 leading-relaxed text-sm">
               {FOOTER_DATA.company.description}

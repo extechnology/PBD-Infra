@@ -3,17 +3,13 @@ import { useState } from "react";
 import VisibilitySkeleton from "../feedback/skeletons/home/VisibilitySkeleton";
 import SectionHeading from "../ui/SectionHeading";
 import FadeUpImage from "../ui/ImageFadeUp";
+import useVisibility from "../../features/home/visibility/hooks/useVisibility";
 
-const visibilityData = [
-  { src: "/images/image1.webp", label: "Residential" },
-  { src: "/images/image2.webp", label: "Commercial" },
-  { src: "/images/image3.webp", label: "Industrial" },
-  { src: "/images/image1.webp", label: "Infrastructure" },
-];
 
 const OurVisibility = () => {
-
   const [isLoading, setIsLoading] = useState(true);
+
+  const { data: visibility } = useVisibility();
 
   if (isLoading) {
     return (
@@ -44,12 +40,12 @@ const OurVisibility = () => {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:px-0">
-          {visibilityData.map((item, idx) => (
+          {visibility?.map((item, idx) => (
             <FadeIn key={idx} delay={0.3 + idx * 0.1}>
               <div className="relative group overflow-hidden border border-gold-500/30 shadow-xl hover:shadow-gold-500/50 transition-shadow duration-300">
                 <FadeUpImage
-                  src={item.src}
-                  alt={item.label}
+                  src={item?.image}
+                  alt={item?.label}
                   className="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-105"
                   // onLoad={handleImageLoad}
                 />
@@ -58,7 +54,7 @@ const OurVisibility = () => {
                 {/* Label */}
               </div>
               <div className=" pt-3 text-sm font-medium text-gray-600">
-                {item.label}
+                {item?.title}
               </div>
             </FadeIn>
           ))}

@@ -3,9 +3,23 @@ import { useState } from "react";
 import ServicesSkeleton from "../feedback/skeletons/home/ServicesSkeleton";
 import LuxuryButton from "../ui/LuxuryButton";
 import CurtainReveal from "../ui/ImageReveal";
+import { useSectionImages } from "../../features/sectionImages/hooks/useSectionImages";
+import usePrimeService from "../../features/home/prime-service/hooks/hooks.primeservice";
 
 const PrimeServices = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const {data:pages} = useSectionImages();
+  const { data: primeservice } = usePrimeService();
+  console.log(primeservice,"primeservice")
+
+  const homePage = pages?.find((page) => page.slug === "home");
+
+  const servicesSection = homePage?.sections?.find(
+    (section) => section.type === "prime-services",
+  );
+  const detail = servicesSection?.details?.[0];
+
+  console.log(detail,"prime detail")
 
   if (isLoading) {
     return (
@@ -29,7 +43,7 @@ const PrimeServices = () => {
           <FadeIn direction="left">
             <div className="relative overflow-hidden shadow-lg shadow-gold-500/10  border-gold-500/20">
               <CurtainReveal
-                src="/images/image3.webp"
+                src={detail?.image || "/images/image3.webp"}
                 alt="Prime Services"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
@@ -39,17 +53,10 @@ const PrimeServices = () => {
           {/* Text */}
           <FadeIn direction="right" className="space-y-12">
             <h2 className="text-2xl font-light pb-4">
-              Our <span className="text-gold-500">Prime Services</span>
+              {detail?.heading}
             </h2>
             <p className="text-sm text-gray-700 text-justify leading-relaxed pb-4">
-              We offer comprehensive construction and real estate solutions
-              backed by over 20 years of industry expertise. Our prime services
-              include residential construction, commercial development,
-              industrial infrastructure projects, project management,
-              contracting services, and real estate development. We focus on
-              delivering high-quality, durable, and future-ready spaces with
-              professional execution, modern engineering practices, and timely
-              project completion
+              {detail?.description}
             </p>
             <LuxuryButton label="Explore Services" to="offer" />
           </FadeIn>

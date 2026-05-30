@@ -1,20 +1,35 @@
 import { useState } from "react";
 import FadeIn from "../components/shared/FadeIn";
 import SubHeading from "../components/ui/SubHeading";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, CheckCircle2 } from "lucide-react";
+import usePostContact from "../features/contact/hooks/contact.hooks";
 
 const ContactPage = () => {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const { mutate } = usePostContact();
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [successMessage, setSuccessMessage] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Contact form submitted:", form);
-    // TODO: integrate with backend API
+    mutate(form, {
+      onSuccess: () => {
+        setForm({ name: "", email: "", phone: "", message: "" });
+        setSuccessMessage(true);
+        setTimeout(() => setSuccessMessage(false), 5000);
+      },
+    });
   };
 
   return (
@@ -127,6 +142,8 @@ const ContactPage = () => {
                   type="tel"
                   id="phone"
                   name="phone"
+                  minLength={10}
+                  maxLength={10}
                   required
                   value={form.phone}
                   onChange={handleChange}
@@ -160,6 +177,21 @@ const ContactPage = () => {
               >
                 Send Message
               </button>
+
+              {/* Inline Success Message */}
+              <div
+                className={`mt-5 flex items-center gap-3 border px-5 py-4 transition-all duration-500 ${
+                  successMessage
+                    ? "opacity-100 translate-y-0 border-gold-500 bg-gold-500/5"
+                    : "opacity-0 -translate-y-2 border-transparent pointer-events-none h-0 mt-0 py-0 overflow-hidden"
+                }`}
+              >
+                <CheckCircle2 className="h-5 w-5 text-gold-500 shrink-0" />
+                <p className="text-sm text-neutral-700">
+                  Your message has been sent successfully. We'll get back to you
+                  shortly.
+                </p>
+              </div>
             </form>
           </FadeIn>
         </div>
@@ -169,4 +201,3 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
-

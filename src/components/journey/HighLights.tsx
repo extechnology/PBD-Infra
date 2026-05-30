@@ -2,8 +2,17 @@ import FadeIn from "../shared/FadeIn";
 import CurtainReveal from "../ui/ImageReveal";
 import LuxuryButton from "../ui/LuxuryButton";
 import SubHeading from "../ui/SubHeading";
+import { useSectionImages } from "../../features/sectionImages/hooks/useSectionImages";
 
 const Highlights = () => {
+  const { data: pages } = useSectionImages();
+  const homePage = pages?.find((page) => page.slug === "our-journey");
+  const aboutSection = homePage?.sections?.find(
+    (section) => section.type === "highlights",
+  );
+  const detail = aboutSection?.details?.[0];
+
+
   return (
     <FadeIn>
       <section className="relative md:py-24 py-10 bg-white overflow-hidden">
@@ -16,20 +25,17 @@ const Highlights = () => {
             {/* LEFT CONTENT */}
             <div>
               {/* Small Label */}
-              <SubHeading title="Highlights of PBD" />
+              <SubHeading title={detail?.sub_heading} />
 
               {/* Heading */}
-              <h2 className="text-xl  xl:text-2xl font-light leading-tight text-black mb-5 mt-4">
-                Engineering Growth with
-                <span className="block text-gold-500">
-                  Experience & Precision
-                </span>
+              <h2 className="text-xl max-w-xs  xl:text-2xl font-light leading-tight text-black mb-5 mt-4">
+                {detail?.heading}
               </h2>
 
               {/* Description */}
               <p className="text-gray-600 text-sm text-justify leading-6 mb-6 max-w-2xl">
-                Over the years, PBD has successfully completed around
-                <span className="text-gold-500 font-medium"> 200+ </span>
+                {detail?.description}
+                {/* <span className="text-gold-500 font-medium"> 200+ </span>
                 residential, commercial, and industrial projects across Kerala,
                 earning the trust of nearly
                 <span className="text-gold-500 font-medium"> 3000+ </span>
@@ -37,7 +43,7 @@ const Highlights = () => {
                 construction, timely delivery, and customer satisfaction, PBD
                 continues to build lasting relationships and deliver
                 developments that create long-term value, durability, and
-                reliability.
+                reliability. */}
               </p>
 
               {/* Button */}
