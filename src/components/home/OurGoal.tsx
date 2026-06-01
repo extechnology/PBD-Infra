@@ -13,14 +13,14 @@ const OurGoal = () => {
 
   const { data: pages } = useSectionImages();
 
-  const homePage = pages?.find((page) => page.slug === "home");
+  const homePage = pages?.find((page: any) => page.slug === "home");
 
   const goalSection = homePage?.sections?.find(
-    (section) => section.type === "goal",
+    (section: any) => section.type === "goal",
   );
   const detail = goalSection?.details?.[0];
 
-  console.log(detail, "detail");
+  // console.log(detail, "detail");
 
   if (isLoading) {
     return (

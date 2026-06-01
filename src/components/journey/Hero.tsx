@@ -6,7 +6,7 @@ const Hero = () => {
   const { data: bannersData } = useBanners();
 
 
-  const journeyBanner = bannersData?.filter((banner) => banner.section === "journey");
+  const journeyBanner = bannersData?.filter((banner: any) => banner.section === "journey");
   const journeyBannerImage = journeyBanner?.[0]?.image;
 
   return (

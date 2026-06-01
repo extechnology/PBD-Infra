@@ -1,29 +1,3 @@
-const monumentData = [
-  {
-    title: "Privacy",
-    description:
-      "Private luxury residences with one flat per floor in each tower.",
-    image: "/images/image1.webp",
-  },
-  {
-    title: "Architecture",
-    description:
-      "Contemporary architecture designed with elegance and precision.",
-    image: "/images/image2.webp",
-  },
-  {
-    title: "Interiors",
-    description:
-      "Minimal interiors crafted with premium materials and clean aesthetics.",
-    image: "/images/image3.webp",
-  },
-  {
-    title: "Lifestyle",
-    description:
-      "An elevated lifestyle experience with curated luxury amenities.",
-    image: "/images/image1.webp",
-  },
-];
 
 interface Structures {
   image:string;
@@ -33,7 +7,7 @@ interface Structures {
 
 const Monument = ({ structures }: {structures: Structures[]}) => {
 
-  console.log(structures,"structures")
+  // console.log(structures,"structures")
   return (
     <section className="bg-white py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">

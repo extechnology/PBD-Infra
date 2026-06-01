@@ -6,7 +6,7 @@ import useCompletedProjects from "../../features/projects/completed-projects/hoo
 const GalleryCard = () => {
   const {data} = useCompletedProjects()
   const [currentPage] = useState(1);
-  console.log(data,"data")
+  // console.log(data,"data")
 
 
   // Scroll to top of gallery section when page changes
@@ -16,7 +16,7 @@ const GalleryCard = () => {
 
   return (
     <div className="grid gap-8 grid-cols-1 md:grid-cols-3 relative z-10">
-      {data?.map((segment, index) => (
+      {data?.map((segment: any, index: number) => (
         <div
           key={index}
           className="group flex flex-col h-full bg-white border border-white/20 rounded-md  transition-all duration-300 shadow-soft overflow-hidden"

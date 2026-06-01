@@ -2,17 +2,17 @@ import { useState, useEffect } from "react";
 import FadeIn from "../components/shared/FadeIn";
 import { useLocation, useParams } from "react-router-dom";
 
-const projectGalleryData = Array.from({ length: 25 }).map((_, i) => ({
-  id: i + 1,
-  image: i % 2 === 0 ? "/images/image1.webp" : "/images/image2.webp",
-  location: [
-    "Feroke, Calicut",
-    "Perumanna, Calicut",
-    "Panthiramkave, Calicut", 
-    "Mukkam, Calicut",
-    "Vipin, Ernakulam",
-  ][i % 5],
-}));
+// const projectGalleryData = Array.from({ length: 25 }).map((_, i) => ({
+//   id: i + 1,
+//   image: i % 2 === 0 ? "/images/image1.webp" : "/images/image2.webp",
+//   location: [
+//     "Feroke, Calicut",
+//     "Perumanna, Calicut",
+//     "Panthiramkave, Calicut", 
+//     "Mukkam, Calicut",
+//     "Vipin, Ernakulam",
+//   ][i % 5],
+// }));
 
 const GallerySinglePage = () => {
   const location = useLocation();
@@ -22,6 +22,7 @@ const GallerySinglePage = () => {
   const itemsPerPage = 10;
   const totalPages = Math.ceil(images.length / itemsPerPage);
   const galleryImages = images;
+
 
   // Scroll to top of gallery section when page changes
   useEffect(() => {
@@ -42,7 +43,7 @@ const GallerySinglePage = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-5 border-t border-l border-white/20">
-          {galleryImages?.map((item) => (
+          {galleryImages?.map((item: any) => (
             <div
               key={item.id}
               className="group flex flex-col bg-white/5 border-b border-r border-white/20 hover:bg-white/10 transition-colors duration-300 cursor-pointer overflow-hidden relative"

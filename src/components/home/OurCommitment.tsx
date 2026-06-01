@@ -10,11 +10,11 @@ const OurCommitment = () => {
 
   const { data: pages } = useSectionImages();
 
-  const homePage = pages?.find((page) => page.slug === "home");
+  const homePage = pages?.find((page: any) => page.slug === "home");
 
   // Find Commitment Section
   const commitmentSection = homePage?.sections?.find(
-    (section) => section.type === "commitment",
+    (section: any) => section.type === "commitment",
   );
 
 

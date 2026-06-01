@@ -4,22 +4,22 @@ import ServicesSkeleton from "../feedback/skeletons/home/ServicesSkeleton";
 import LuxuryButton from "../ui/LuxuryButton";
 import CurtainReveal from "../ui/ImageReveal";
 import { useSectionImages } from "../../features/sectionImages/hooks/useSectionImages";
-import usePrimeService from "../../features/home/prime-service/hooks/hooks.primeservice";
+// import usePrimeService from "../../features/home/prime-service/hooks/hooks.primeservice";
 
 const PrimeServices = () => {
   const [isLoading, setIsLoading] = useState(true);
   const {data:pages} = useSectionImages();
-  const { data: primeservice } = usePrimeService();
-  console.log(primeservice,"primeservice")
+  // const { data: primeservice } = usePrimeService();
+  // console.log(primeservice,"primeservice")
 
-  const homePage = pages?.find((page) => page.slug === "home");
+  const homePage = pages?.find((page: any) => page.slug === "home");
 
   const servicesSection = homePage?.sections?.find(
-    (section) => section.type === "prime-services",
+    (section: any) => section.type === "prime-services",
   );
   const detail = servicesSection?.details?.[0];
 
-  console.log(detail,"prime detail")
+  // console.log(detail,"prime detail")
 
   if (isLoading) {
     return (

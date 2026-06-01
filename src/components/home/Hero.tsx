@@ -8,7 +8,7 @@ const Hero = () => {
   const { data: heroVideoData } = useHeroVideo();
   const videoUrl = heroVideoData?.[0]?.video;
 
-  console.log(videoUrl, "hero video");
+  // console.log(videoUrl, "hero video");
   
 
   return (

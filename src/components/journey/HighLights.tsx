@@ -6,9 +6,9 @@ import { useSectionImages } from "../../features/sectionImages/hooks/useSectionI
 
 const Highlights = () => {
   const { data: pages } = useSectionImages();
-  const homePage = pages?.find((page) => page.slug === "our-journey");
+  const homePage = pages?.find((page: any) => page.slug === "our-journey");
   const aboutSection = homePage?.sections?.find(
-    (section) => section.type === "highlights",
+    (section: any) => section.type === "highlights",
   );
   const detail = aboutSection?.details?.[0];
 

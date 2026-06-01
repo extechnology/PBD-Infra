@@ -6,9 +6,9 @@ import { useSectionImages } from "../../features/sectionImages/hooks/useSectionI
 
 const ValueGrowthSection = () => {
   const { data: pages } = useSectionImages();
-  const homePage = pages?.find((page) => page.slug === "our-journey");
+  const homePage = pages?.find((page: any) => page.slug === "our-journey");
   const valueGrowthSection = homePage?.sections?.filter(
-    (section) => section.type === "growth-section",
+    (section: any) => section.type === "growth-section",
   );
   const section1 = valueGrowthSection?.[0];
   const section2 = valueGrowthSection?.[1];
@@ -19,7 +19,7 @@ const ValueGrowthSection = () => {
       <div className="max-w-7xl mx-auto px-6 space-y-32">
         {/* ================= SECTION 1 ================= */}
         <FadeIn>
-          {section1?.details?.map((detail, index) => (
+          {section1?.details?.map((detail: any, index: number) => (
             <div
               key={index}
               className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
@@ -75,7 +75,7 @@ const ValueGrowthSection = () => {
 
         {/* ================= SECTION 2 ================= */}
         <FadeIn>
-          {section2?.details?.map((detail, index) => (
+          {section2?.details?.map((detail: any, index: number) => (
             <div
               key={index}
               className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"

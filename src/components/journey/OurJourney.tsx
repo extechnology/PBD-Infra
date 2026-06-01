@@ -5,9 +5,9 @@ import { useSectionImages } from "../../features/sectionImages/hooks/useSectionI
 
 const OurJourney = () => {
   const { data: pages } = useSectionImages();
-  const homePage = pages?.find((page) => page.slug === "our-journey");
+  const homePage = pages?.find((page: any) => page.slug === "our-journey");
   const aboutSection = homePage?.sections?.filter(
-    (section) => section.type === "journey",
+    (section: any) => section.type === "journey",
   );
 
 
@@ -23,7 +23,7 @@ const OurJourney = () => {
             title="Our Journey"
             subtitle="Transforming Ideas into Trusted Developments"
           />
-          {messageSection?.details?.map((message, index) => (
+          {messageSection?.details?.map((message: any, index: number) => (
             <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="">
                 <CurtainReveal
@@ -45,7 +45,7 @@ const OurJourney = () => {
             </div>
           ))}
 
-          {managementSection?.details?.map((management, index) => (
+          {managementSection?.details?.map((management: any, index: number) => (
             <div
               key={index}
               className="grid grid-cols-1 md:grid-cols-2 pt-10 gap-8"

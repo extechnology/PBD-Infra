@@ -7,7 +7,7 @@ const OfferDetailHero = () => {
 
   const { data: bannersData } = useBanners();
 
-  const journeyBanner = bannersData?.filter((banner) => banner.section === "services");
+  const journeyBanner = bannersData?.filter((banner: any) => banner.section === "services");
   const journeyBannerImage = journeyBanner?.[0]?.image;
 
   const description = `

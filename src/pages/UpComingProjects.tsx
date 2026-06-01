@@ -6,27 +6,47 @@ import Monument from "../components/upcoming/Monument";
 import Parallax from "../components/upcoming/Parallax";
 import { useLocation } from "react-router-dom";
 
+interface UpcomingProjects {
+  name: string;
+  title: string;
+  images: string;
+  location: string;
+  specifications: string;
+  specification_images: string;
+  structure: string;
+  overview: string;
+}
+
 const UpComingProjects = () => {
   const location = useLocation();
 
   const upcomingProjects = location.state?.project;
 
-  console.log(upcomingProjects, "upcomingProjects");
+  // console.log(upcomingProjects, "upcomingProjects");
 
   const specifications =
-    upcomingProjects?.flatMap((item) => item?.specifications || []) || [];
+    upcomingProjects?.flatMap(
+      (item: UpcomingProjects) => item?.specifications || [],
+    ) || [];
 
   const specificationImages =
-    upcomingProjects?.flatMap((item) => item?.specification_images || []) || [];
+    upcomingProjects?.flatMap(
+      (item: UpcomingProjects) => item?.specification_images || [],
+    ) || [];
 
   const overView =
-    upcomingProjects?.flatMap((item) => item?.overview || []) || [];
+    upcomingProjects?.flatMap(
+      (item: UpcomingProjects) => item?.overview || [],
+    ) || [];
 
   const overviewImages =
-    upcomingProjects?.flatMap((item) => item?.images || []) || [];
+    upcomingProjects?.flatMap((item: UpcomingProjects) => item?.images || []) ||
+    [];
 
   const structures =
-    upcomingProjects?.flatMap((item) => item?.structure || []) || [];
+    upcomingProjects?.flatMap(
+      (item: UpcomingProjects) => item?.structure || [],
+    ) || [];
 
   return (
     <div>

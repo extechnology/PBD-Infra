@@ -8,7 +8,7 @@ const OffersServices = () => {
 
   const {data:categories} = useOfferCategories();
 
-  const services = categories?.map((service) => service)
+  const services = categories?.map((service: any) => service)
 
   return (
     <section className="py-10 px-3 md:px-0">
@@ -21,7 +21,7 @@ const OffersServices = () => {
         </FadeIn>
 
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {services?.map((service) => (
+          {services?.map((service: any) => (
             <OfferServiceCard {...service} />
           ))}
         </div>

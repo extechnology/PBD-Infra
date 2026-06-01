@@ -31,7 +31,7 @@ const OverView = ({ overView, overviewImages }: OverViewProps) => {
       .filter(Boolean)
       .join(", ") || "";
 
-  console.log(points, "points");
+  // console.log(points, "points");
 
   const parsedPoints =
     points

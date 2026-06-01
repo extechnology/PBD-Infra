@@ -4,7 +4,7 @@ import useBanners from "../../features/banners/hooks/useBanners";
 const GalleryHero = () => {
   const { data: bannersData } = useBanners();
 
-  const journeyBanner = bannersData?.filter((banner) => banner.section === "projects");
+  const journeyBanner = bannersData?.filter((banner: any) => banner.section === "projects");
   const journeyBannerImage = journeyBanner?.[0]?.image;
 
   return (

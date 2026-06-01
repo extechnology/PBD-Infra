@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Building2, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { FOOTER_DATA } from "../../constants/footerData";
 
 const Footer = () => {

@@ -13,12 +13,12 @@ const OfferDetails = () => {
 
   // Find the offer matching the URL slug
   const offer = offers?.find(
-    (item) => createSlug(item?.category?.title) === slug,
+    (item: any) => createSlug(item?.category?.title) === slug,
   );
 
   // Split points and assurance strings into arrays, filtering empty strings
-  const pointsArray = offer?.points?.split('#').filter((p) => p.trim()) || [];
-  const assuranceArray = offer?.assurance?.split('#').filter((p) => p.trim()) || [];
+  const pointsArray = offer?.points?.split('#').filter((p: string) => p.trim()) || [];
+  const assuranceArray = offer?.assurance?.split('#').filter((p: string) => p.trim()) || [];
 
   if (isLoading) {
     return <div className="flex justify-center items-center h-64">Loading...</div>;
@@ -72,7 +72,7 @@ const OfferDetails = () => {
             </h3>
 
             <div className="space-y-4">
-              {pointsArray.map((item, index) => (
+              {pointsArray.map((item: any, index: number) => (
                 <div
                   key={index}
                   className="flex items-start gap-4 border-b border-neutral-200 pb-4"
@@ -94,7 +94,7 @@ const OfferDetails = () => {
             </h3>
 
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {assuranceArray.map((item, index) => (
+              {assuranceArray.map((item: any, index: number) => (
                 <div
                   key={index}
                   className="border border-gold-300 px-4 py-3 text-sm text-neutral-700 transition duration-300 hover:border-black"

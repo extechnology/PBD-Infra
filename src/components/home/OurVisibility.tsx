@@ -40,7 +40,7 @@ const OurVisibility = () => {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:px-0">
-          {visibility?.map((item, idx) => (
+          {visibility?.map((item: any, idx: number) => (
             <FadeIn key={idx} delay={0.3 + idx * 0.1}>
               <div className="relative group overflow-hidden border border-gold-500/30 shadow-xl hover:shadow-gold-500/50 transition-shadow duration-300">
                 <FadeUpImage

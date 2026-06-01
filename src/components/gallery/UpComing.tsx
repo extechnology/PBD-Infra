@@ -10,7 +10,7 @@ const UpComing = () => {
   return (
     <FadeIn>
       <div className="grid gap-8 grid-cols-1 md:grid-cols-4 relative z-10">
-        {upcomingProjects?.map((project) => (
+        {upcomingProjects?.map((project: any) => (
           <div
             key={project.id}
             className="group flex flex-col h-full bg-white/5 border border-white/20  transition-all duration-300 shadow-soft overflow-hidden"
