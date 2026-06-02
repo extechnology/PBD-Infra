@@ -42,6 +42,9 @@ const OverView = ({ overView, overviewImages }: OverViewProps) => {
   const galleryImages: overviewImages[] =
     overviewImages?.flat().filter((img): img is overviewImages => !!img) ?? [];
 
+    console.log(galleryImages,"galleryImages overview")
+
+
   return (
     <section className="relative overflow-hidden bg-white py-20">
       {/* Background Accent */}
@@ -95,7 +98,7 @@ const OverView = ({ overView, overviewImages }: OverViewProps) => {
 
           {/* Right Gallery */}
           <div className="grid grid-cols-2 ">
-            {galleryImages.map((image, index) => (
+            {galleryImages?.map((image, index) => (
               <div
                 key={index}
                 className={`group relative overflow-hidden  ${

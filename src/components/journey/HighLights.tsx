@@ -12,6 +12,8 @@ const Highlights = () => {
   );
   const detail = aboutSection?.details?.[0];
 
+  console.log(detail,"detail hightiligh")
+
 
   return (
     <FadeIn>
@@ -58,7 +60,7 @@ const Highlights = () => {
               {/* Main Image */}
               <div className="relative overflow-hidden">
                 <CurtainReveal
-                  src="/images/image3.webp"
+                  src={detail?.image || "/images/image3.webp"}
                   alt="PBD Highlights"
                   className="w-full h-[650px] object-cover hover:scale-105 transition-transform duration-700"
                 />

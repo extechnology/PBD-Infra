@@ -1,13 +1,28 @@
 import FadeIn from "../shared/FadeIn";
+import useBanners from "../../features/banners/hooks/useBanners";
+
+interface OfferProps {
+  image: string;
+  section: string;
+  id: number;
+  title: string;
+} 
+
 
 const OffersHero = () => {
+
+  const {data:bannerImages} = useBanners();
+
+
+  const offerImage = bannerImages?.filter((image:OfferProps) => image.section === "offer");
+  console.log(offerImage, "offers section banner");
   return (
     <FadeIn direction="none" duration={1500}>
       <section className="relative min-h-[65vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/images/image2.webp"
+            src={offerImage?.[0]?.image || "/images/image2.webp"}
             alt="Offers Hero"
             className="w-full h-full object-cover"
           />

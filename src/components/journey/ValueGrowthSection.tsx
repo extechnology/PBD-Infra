@@ -13,6 +13,7 @@ const ValueGrowthSection = () => {
   const section1 = valueGrowthSection?.[0];
   const section2 = valueGrowthSection?.[1];
 
+console.log(section2,"section")
   
   return (
     <section className="bg-white md:py-28 py-10 overflow-hidden">
@@ -64,7 +65,6 @@ const ValueGrowthSection = () => {
                   {detail?.description}
                 </p>
 
-                {/* Features */}
 
                 {/* Button */}
                 <LuxuryButton label="Explore Projects" to="projects" />
@@ -80,7 +80,7 @@ const ValueGrowthSection = () => {
               key={index}
               className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
             >
-              {/* CONTENT */}
+              {/* CONTENT SECTOIN*/}
               <div className="order-2 lg:order-1">
                 {/* Label */}
                 <div className="flex items-center gap-4 mb-3">
@@ -98,7 +98,7 @@ const ValueGrowthSection = () => {
                 </p>
               </div>
 
-              {/* IMAGE */}
+              {/* IMAGE  SECTION*/}
               <div className="relative order-1 lg:order-2">
                 {/* Decorative Border */}
                 <div className="absolute -bottom-6 -right-6 w-full h-full border border-gray-200 " />

@@ -95,6 +95,9 @@ const Footer = () => {
           <p className="text-gray-500 text-sm">
             © {currentYear} <span className="text-gray-300">PBD Infra</span>. All rights reserved.
           </p>
+          <div >
+            <p className="text-gray-400 text-xs">powered by <Link to="https://extechnology.in" className="text-gold-400">extechnology</Link></p>
+          </div>
           <div className="flex space-x-8">
             {FOOTER_DATA.policies.map((policy) => (
               <Link

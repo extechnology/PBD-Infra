@@ -92,7 +92,7 @@ const OurGoal = () => {
               className="w-full h-full object-cover opacity-90  hover:opacity-100  transition-all duration-700"
             />
             <CurtainReveal
-              src="/images/image3.webp"
+              src="/images/build_trust.jpeg"
               alt="Our Goal 2"
               className="w-full h-full object-cover opacity-90 hover:opacity-100  transition-all duration-700"
             />

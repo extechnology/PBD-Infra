@@ -7,14 +7,13 @@ interface Structures {
 
 const Monument = ({ structures }: {structures: Structures[]}) => {
 
-  // console.log(structures,"structures")
   return (
     <section className="bg-white py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         {/* Heading */}
         <div className="mb-14">
           <h1 className=" text-2xl text-center font-light text-neutral-900 md:text-3xl">
-            Private Sky Villas
+            Private Sky Villas 
           </h1>
 
           <div className="mx-auto mt-5 h-px w-24 bg-neutral-900" />
@@ -22,7 +21,7 @@ const Monument = ({ structures }: {structures: Structures[]}) => {
 
         {/* Grid */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
-          {structures.map((item, index) => (
+          {structures?.map((item, index) => (
             <div
               key={index}
               className="group border border-neutral-200 bg-white transition-all duration-300 hover:border-gold-400"
@@ -30,8 +29,8 @@ const Monument = ({ structures }: {structures: Structures[]}) => {
               {/* Image */}
               <div className="overflow-hidden">
                 <img
-                  src={item.image}
-                  alt={item.title}
+                  src={item?.image}
+                  alt={item?.title}
                   className="h-[320px] w-full object-cover transition duration-700 group-hover:scale-105"
                 />
               </div>
@@ -45,7 +44,7 @@ const Monument = ({ structures }: {structures: Structures[]}) => {
 
                 {/* Title */}
                 <h2 className="text-2xl font-light tracking-wide text-black">
-                  {item.title}
+                  {item?.title}
                 </h2>
 
                 {/* Divider */}
@@ -53,7 +52,7 @@ const Monument = ({ structures }: {structures: Structures[]}) => {
 
                 {/* Description */}
                 <p className="text-sm leading-relaxed text-neutral-600">
-                  {item.description}
+                  {item?.description}
                 </p>
               </div>
             </div>
